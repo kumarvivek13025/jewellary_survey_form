@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Input Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.png">
+</head>
+<body>
+  <div class="progress-container">
+    <div class="progress" id="progress"></div>
+  </div>
+  <h1 id="title">Jewelry Purchase Form</h1>
+  <p id="description"><i>Help us recommend the best jewelry for you</i></p>
+  <div class="form-container">
+    <form id="user-input-form">
+      <div class="question-container">
+        
+        <div class="question" id="question1">
+          <label id="occasion-label">Occasion</label>
+          <div class="grid-container">
+            <div class="grid-item">
+              <input type="radio" name="occasion" id="engagement" value="Engagement" required>
+              <label for="engagement">
+                <img src="./img/engagement.png" alt="Engagement" class="option-image">
+                <p>Engagement</p>
+              </label>
+            </div>
+            <div class="grid-item">
+              <input type="radio" name="occasion" id="anniversary" value="Anniversary" required>
+              <label for="anniversary">
+                <img src="./img/anniversary.png" alt="Anniversary" class="option-image">
+                <p>Anniversary</p>
+              </label>
+            </div>
+            <div class="grid-item">
+              <input type="radio" name="occasion" id="birthday" value="Birthday" required>
+              <label for="birthday">
+                <img src="./img/birthday.jpg" alt="Birthday" class="option-image">
+                <p>Birthday</p>
+              </label>
+            </div>
+            <div class="grid-item">
+              <input type="radio" name="occasion" id="daily-wear" value="Daily-wear" required>
+              <label for="daily-wear">
+                <img src="./img/dailywear.jpg" alt="Daily-wear" class="option-image">
+                <p>Daily-wear</p>
+              </label>
+            </div>
+          </div>
+          <button type="button" class="next-button" data-next="question2">Next</button>
+        </div>
+        
+        
+        <div class="question hidden" id="question2">
+          <label>Gift or personal purchase?
+            <br><br>
+            <input type="radio" name="purchase-type" value="Gift" required> Gift
+            <br><br>
+            <input type="radio" name="purchase-type" value="Personal" required> Personal
+          </label>
+          <button type="button" class="next-button" data-next="question3">Next</button>
+        </div>
+        
+        
+        <div class="question hidden" id="question3">
+          <label>Gender
+            <br><br>
+            <input type="radio" id="male" name="gender" value="Male" required> Male
+            <br><br>
+            <input type="radio" id="female" name="gender" value="Female" required> Female
+            <br><br>
+            <input type="radio" id="other" name="gender" value="Other" required> Other
+          </label>
+          <button type="button" class="next-button" data-next="question4">Next</button>
+        </div>
+        
+        
+        <div class="question hidden" id="question4">
+          <label id="jewelry-type-label">Type of jewelry</label>
+          <div class="grid-container grid-container-horizontal">
+            <div class="grid-item">
+              <input type="radio" name="jewelry-type" id="rings" value="Rings" required>
+              <label for="rings">
+                <img src="./img/rings.jpg" alt="Rings" class="option-image">
+                <p>Rings</p>
+              </label>
+            </div>
+            <div class="grid-item">
+              <input type="radio" name="jewelry-type" id="necklaces" value="Necklaces" required>
+              <label for="necklaces">
+                <img src="./img/necklaces.jpg" alt="Necklaces" class="option-image">
+                <p>Necklaces</p>
+              </label>
+            </div>
+            <div class="grid-item">
+              <input type="radio" name="jewelry-type" id="pendants" value="Pendants" required>
+              <label for="pendants">
+                <img src="./img/pendents.png" alt="Pendants" class="option-image">
+                <p>Pendants</p>
+              </label>
+            </div>
+          </div>
+          <button type="button" class="next-button" data-next="question5">Next</button>
+        </div>
+        
+        
+        <div class="question hidden" id="question5">
+          <label>Age group
+            <br><br>
+            <input type="radio" name="age-group" value="18-24" required> 18-24
+            <br><br>
+            <input type="radio" name="age-group" value="25-34" required> 25-34
+            <br><br>
+            <input type="radio" name="age-group" value="35-44" required> 35-44
+            <br><br>
+            <input type="radio" name="age-group" value="45+" required> 45+
+          </label>
+          <button type="button" class="next-button" data-next="question6">Next</button>
+        </div>
+        
+       
+        <div class="question hidden" id="question6">
+          <label for="religion">Religion (optional)
+            <input id="religion" type="text" placeholder="Enter your religion">
+          </label>
+          <button type="button" class="next-button" data-next="question7">Next</button>
+        </div>
+        
+        
+        <div class="question hidden" id="question7">
+          <label for="budget">Budget
+            <select id="budget" required>
+              <option value="" disabled selected>Select budget range</option>
+              <option>10000</option>
+              <option>10000-20000</option>
+              <option>20000-50000</option>
+              <option>50000+</option>
+            </select>
+          </label>
+          <button type="button" class="next-button" data-next="question8">Next</button>
+        </div>
+        
+        
+        <div class="question hidden" id="question8">
+          <label for="outfit-upload">Would you like to match your jewelry with an outfit? (optional)
+            <input type="file" id="outfit-upload" accept="image/*">
+            <div id="preview"></div>
+          </label>
+          <hr>
+          <label>
+            <input type="submit" name="submit" id="submit" class="submit-button">
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  
+  <div id="thank-you-message" class="hidden">
+    <h1 style="color: black;">Thank you for the survey!</h1>
+    <p>We would try our best to recommend the best ornaments according to your choice</p>
+  </div>
+
+  
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <p>Please select an option before proceeding.</p>
+      <button id="modal-ok-button" class="submit-button">OK</button>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
